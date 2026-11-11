@@ -8,12 +8,13 @@
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Inter & Montserrat for aggressive automotive styling -->
+  <!-- Comic-style typeface fallback for platforms without Comic Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
   <script>
     tailwind.config = {
@@ -21,8 +22,8 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            heading: ['Montserrat', 'sans-serif'],
+            sans: ['Comic Sans MS', 'Comic Sans', 'Comic Neue', 'cursive'],
+            heading: ['Comic Sans MS', 'Comic Sans', 'Comic Neue', 'cursive'],
           },
           colors: {
             brand: {
@@ -47,6 +48,18 @@
   </script>
 
   <style>
+    html {
+      font-size: 17px;
+    }
+
+    [class~="text-[10px]"] {
+      font-size: 11px !important;
+    }
+
+    [class~="text-[11px]"] {
+      font-size: 12px !important;
+    }
+
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
@@ -66,13 +79,23 @@
       background: radial-gradient(circle at top, rgba(37, 99, 235, 0.12), transparent 35%), #040b17;
     }
 
+    body,
+    .font-sans,
+    .font-heading,
+    button,
+    input,
+    select,
+    textarea {
+      font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive !important;
+    }
+
     .bg-grid-pattern {
-      background-color: #071421;
+      background-color: #f4f7fb;
       background-image:
-        linear-gradient(90deg, rgba(2,6,23,0.9) 0%, rgba(8,17,31,0.8) 45%, rgba(12,19,34,0.7) 100%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1800 1000'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg stroke='%2320a8f3' stroke-width='10' opacity='0.35'%3E%3Cg transform='translate(250 260)'%3E%3Cpath d='M-90 0h180M0-90v180M-42-42l84 84M42-42l-84 84'/%3E%3Ccircle cx='0' cy='0' r='95'/%3E%3C/g%3E%3Cg transform='translate(1160 180)'%3E%3Cpath d='M-190 0h120M70 0h120M-70 110V-110M70 110V-110'/%3E%3Cpath d='M-70 0h140M-70 0l-52 52M70 0l52 52M-70 0l-52-52M70 0l52-52'/%3E%3C/g%3E%3Cg transform='translate(310 680)'%3E%3Ccircle cx='0' cy='0' r='110'/%3E%3Cpath d='M-110 0h220M0-110v220M-80-80l160 160M80-80l-160 160'/%3E%3C/g%3E%3Cg transform='translate(1290 690)'%3E%3Cpath d='M-160 30h100M60 30h100M-30 120V-60M30 120V-60M-30 30h60M-120-60l-52-52M120-60l52-52M-120 120l-52 52M120 120l52 52'/%3E%3Ccircle cx='0' cy='0' r='132'/%3E%3C/g%3E%3C/g%3E%3Cg stroke='%23ef4444' stroke-width='8' opacity='0.3'%3E%3Cg transform='translate(610 280)'%3E%3Cpath d='M-120 20l48 48M120-20l-48-48M-20-120l-48 48M20 120l48-48'/%3E%3Cpath d='M-130 0h260M0-130v260'/%3E%3Ccircle cx='0' cy='0' r='100'/%3E%3C/g%3E%3Cg transform='translate(900 560)'%3E%3Cpath d='M-150 0h300M-90-90l180 180M90-90l-180 180'/%3E%3Ccircle cx='0' cy='0' r='82'/%3E%3C/g%3E%3C/g%3E%3Cg stroke='%23dfeafc' stroke-width='6' opacity='0.14'%3E%3Cg transform='translate(485 470)'%3E%3Cpath d='M-220 0h440M-100-100l200 200M100-100l-200 200'/%3E%3C/g%3E%3Cg transform='translate(1040 450)'%3E%3Cpath d='M-210 0h420M0-170v340M-70-70l140 140M70-70l-140 140'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        linear-gradient(90deg, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.86) 48%, rgba(255,255,255,0.72) 100%),
+        url("bg-theme.png");
       background-size: cover;
-      background-position: center;
+      background-position: center right;
       background-repeat: no-repeat;
     }
 
@@ -157,6 +180,152 @@
       transform: translateY(-2px) scale(1.03);
     }
 
+    .light-mode {
+      color: #0f172a;
+      background: #f8fafc;
+    }
+
+    .light-mode section,
+    footer.light-mode {
+      background-color: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+    }
+
+    footer.light-mode {
+      color: #475569 !important;
+    }
+
+    .light-mode :is(h2, h3, h4, .text-white) {
+      color: #0f172a !important;
+    }
+
+    .light-mode :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) {
+      color: #475569 !important;
+    }
+
+    .light-mode :is(.text-brand-electric, .text-brand-cyan, .text-blue-300) {
+      color: #1e3a8a !important;
+    }
+
+    .light-mode .text-brand-gold {
+      color: #a16207 !important;
+    }
+
+    .light-mode [class*="bg-brand-card"],
+    .light-mode [class*="bg-brand-surface"],
+    .light-mode [class*="bg-brand-dark"],
+    .light-mode [class*="bg-slate-950"],
+    .light-mode [class*="bg-slate-900"] {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+    }
+
+    .light-mode [class*="bg-blue-950"],
+    .light-mode [class*="bg-blue-900"] {
+      background-color: #eff6ff !important;
+      border-color: #bfdbfe !important;
+    }
+
+    .light-mode [class*="bg-blue-600/20"] {
+      background-color: #dbeafe !important;
+    }
+
+    .light-mode [class*="border-slate-"] {
+      border-color: #e2e8f0 !important;
+    }
+
+    .light-mode .booking-highlight {
+      border: 2px solid #2563eb !important;
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.16), 0 0 0 5px rgba(37, 99, 235, 0.08);
+    }
+
+    .booking-highlight::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, #dc2626, #2563eb, #06b6d4);
+    }
+
+    .light-mode .group {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+    }
+
+    .light-mode .group .bg-gradient-to-tr {
+      background-image: linear-gradient(135deg, #dbeafe, #f8fafc) !important;
+      border-color: #bfdbfe !important;
+      color: #1e3a8a !important;
+    }
+
+    .light-mode .light-surface {
+      background: linear-gradient(135deg, #ffffff, #eff6ff) !important;
+      border-color: #dbeafe !important;
+    }
+
+    .services-highlight {
+      background: linear-gradient(180deg, #eaf2ff 0%, #f8fafc 260px, #ffffff 100%) !important;
+    }
+
+    .services-highlight::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(88%, 1280px);
+      height: 4px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, transparent, #1d4ed8 25%, #dc2626 75%, transparent);
+    }
+
+    .service-heading h2::after {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 4px;
+      margin: 16px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #1d4ed8, #dc2626);
+    }
+
+    #services .group {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #services .group::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, #1d4ed8, #06b6d4, #dc2626);
+    }
+
+    #services .group:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(30, 58, 138, 0.13);
+    }
+
+    .light-mode input,
+    .light-mode select,
+    .light-mode textarea {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+
+    .light-mode input::placeholder,
+    .light-mode textarea::placeholder {
+      color: #64748b !important;
+    }
+
+    .light-mode a[class*="bg-"].text-white,
+    .light-mode button[class*="bg-"].text-white {
+      color: #ffffff !important;
+    }
+
     .clip-slanted {
       clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     }
@@ -166,6 +335,15 @@
     }
     .glow-border:hover {
       box-shadow: 0 0 35px 0px rgba(0, 180, 216, 0.55);
+    }
+
+    #gondiaLeafletMap {
+      background: transparent;
+      font-family: inherit;
+    }
+
+    #gondiaLeafletMap .leaflet-control-attribution {
+      font-size: 10px;
     }
   </style>
 </head>
@@ -180,7 +358,7 @@
         </span>
         <span class="hidden md:inline-block text-slate-600">|</span>
         <span class="hidden md:flex items-center gap-1.5 text-slate-300">
-          <i class="fa-solid fa-clock text-brand-electric"></i> Mon - Sun: 9:00 AM - 8:30 PM
+          <i class="fa-solid fa-clock text-brand-electric"></i> Mon - Sun: 9:00 AM - 9:00 PM
         </span>
       </div>
       <div class="flex items-center gap-4">
@@ -257,54 +435,51 @@
   <main class="flex-grow">
 
     <!-- HERO SECTION -->
-    <section class="relative bg-grid-pattern overflow-hidden pt-12 pb-20 md:py-24 border-b border-slate-800/60">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.12),transparent_30%)]"></div>
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-blue/15 blur-[120px] rounded-full pointer-events-none"></div>
-      <div class="absolute top-10 right-10 w-72 h-72 bg-brand-electric/10 blur-[100px] rounded-full pointer-events-none"></div>
-
+    <section class="relative overflow-hidden bg-grid-pattern bg-[#f4f7fb] pt-12 pb-20 md:py-20 border-b border-slate-200/80">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(37,99,235,0.12),transparent_22%),radial-gradient(circle_at_80%_18%,rgba(14,165,233,0.10),transparent_18%)]"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_1.15fr] gap-10 items-center">
+
+          <div class="space-y-6 text-center lg:text-left">
             <div class="hero-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-brand-cyan text-xs font-semibold uppercase tracking-wider">
               <span class="w-2 h-2 rounded-full bg-brand-electric animate-ping"></span>
-              Gondia's Trusted Multi-Brand Garage
+              Gondia's Trusted Garage Experts
             </div>
 
-            <h1 class="hero-title font-heading text-[3.3rem] sm:text-5xl lg:text-[5.2rem] font-black text-white tracking-tight uppercase leading-[0.9]">
-              PRECISION SERVICE. <br>
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-electric via-blue-400 to-cyan-300">
-                TRUSTED PERFORMANCE.
+            <h1 class="hero-title font-heading text-[3.1rem] sm:text-5xl lg:text-[5rem] font-black text-[#0f172a] tracking-[-0.06em] uppercase leading-[0.9]">
+              Precision Care For
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-[#1d4ed8] via-[#2563eb] to-[#06b6d4]">
+                Every Mile.
               </span>
             </h1>
 
-            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              Led by <span class="text-white font-semibold">Shabbir Sheikh</span> (Owner & Chief Technician), we deliver dealership-grade computerized car diagnostics, complete engine overhauls, suspension repairs, brake servicing, and routine maintenance for all car makes and models.
+            <p class="text-slate-700 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              From routine checkups to complete engine rebuilds, our workshop combines dealership-grade diagnostics, honest repair advice, and fast turnaround times for every car on the road.
             </p>
 
-            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs font-semibold text-slate-300">
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2 text-xs font-semibold text-white">
               <div class="value-pill flex items-center gap-2 px-3.5 py-2 rounded-lg">
-                <i class="fa-solid fa-shield-halved text-brand-electric"></i> 100% Genuine Parts
+                <i class="fa-solid fa-shield-halved text-[#1E3A8A]"></i> Genuine Parts
               </div>
               <div class="value-pill flex items-center gap-2 px-3.5 py-2 rounded-lg">
-                <i class="fa-solid fa-laptop-code text-brand-electric"></i> Computerized Diagnostics
+                <i class="fa-solid fa-screwdriver-wrench text-[#1E3A8A]"></i> Advanced Diagnostics
               </div>
               <div class="value-pill flex items-center gap-2 px-3.5 py-2 rounded-lg">
-                <i class="fa-solid fa-car-side text-brand-electric"></i> Multi-Brand Specialist
+                <i class="fa-solid fa-car-side text-[#1E3A8A]"></i> Multi-Brand Expertise
               </div>
             </div>
 
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-              <button onclick="openBookingModal()" class="cta-primary w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 text-white font-bold text-base shadow-xl shadow-blue-600/30 flex items-center justify-center gap-2">
-                <i class="fa-solid fa-wrench"></i> Book Your Service Now
+              <button onclick="openBookingModal()" class="cta-primary w-full sm:w-auto px-7 py-4 rounded-xl bg-gradient-to-r from-[#1d4ed8] via-[#2563eb] to-[#0ea5e9] text-white font-bold text-base shadow-xl shadow-blue-600/30 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-wrench"></i> Book Your Service
               </button>
-              <a href="https://wa.me/919923085169?text=Hello%20Shabbir%20Autocare,%20I%20need%20a%20repair%20quote%20for%20my%20car." target="_blank" rel="noopener noreferrer" class="cta-secondary w-full sm:w-auto px-6 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-green-500 text-white font-bold text-base flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-900/20">
-                <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+              <a href="https://wa.me/919923085169?text=Hello%20Shabbir%20Autocare,%20I%20need%20a%20repair%20quote%20for%20my%20car." target="_blank" rel="noopener noreferrer" class="cta-secondary w-full sm:w-auto px-6 py-4 rounded-xl bg-gradient-to-r from-[#16a34a] to-[#22c55e] text-white font-bold text-base flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-900/20">
+                <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Us
               </a>
             </div>
 
             <div class="hero-score pt-4 flex items-center justify-center lg:justify-start gap-3 rounded-2xl px-3 py-3 w-max max-w-full">
-              <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-white p-1.5 shadow-lg shadow-slate-900/30">
+              <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-white p-1.5 shadow-lg shadow-slate-900/10">
                 <svg viewBox="0 0 24 24" class="w-full h-full">
                   <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/>
                   <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.94H1.27v3.15C3.25 21.32 7.31 24 12 24z"/>
@@ -313,87 +488,211 @@
                 </svg>
               </div>
               <div class="text-left">
-                <div class="flex items-center gap-1 text-brand-gold text-sm">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>
-                  <span class="text-white font-bold ml-1">5.0</span>
+                  <span class="text-[#0f172a] font-bold ml-1">5.0</span>
                 </div>
-                <p class="text-xs text-slate-400">Loved by Gondia Car Owners on Google</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="lg:col-span-5">
-            <div class="glass-card relative mx-auto max-w-md rounded-2xl p-6 overflow-hidden glow-border">
-              <div class="absolute -right-16 -top-16 w-48 h-48 bg-brand-blue/20 rounded-full blur-2xl"></div>
-              <div class="absolute top-0 right-0 w-32 h-1 bg-gradient-to-l from-brand-cyan to-transparent"></div>
-
-              <div class="flex items-start justify-between border-b border-slate-700/60 pb-5">
-                <div>
-                  <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-brand-cyan bg-blue-950/80 px-2.5 py-0.5 rounded border border-blue-800/60 mb-2">
-                    Multi-Brand Specialist
-                  </span>
-                  <h2 class="font-heading text-2xl font-black text-white uppercase tracking-wider">Shabbir Autocare</h2>
-                  <p class="text-xs text-slate-400">Precision Service. Trusted Performance.</p>
-                </div>
-                <div class="w-12 h-12 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center justify-center text-brand-electric shadow-lg shadow-blue-950/30">
-                  <i class="fa-solid fa-car text-xl"></i>
-                </div>
-              </div>
-
-              <div class="my-5 p-4 rounded-xl bg-slate-900/80 border border-slate-700/80 flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-slate-800 flex items-center justify-center text-white text-lg font-bold shadow-md">
-                  <i class="fa-solid fa-user-gear"></i>
-                </div>
-                <div>
-                  <div class="text-xs text-brand-cyan font-semibold uppercase tracking-wider">Owner & Chief Technician</div>
-                  <div class="text-lg font-bold text-white tracking-wide">SHABBIR SHEIKH</div>
-                  <div class="text-xs text-slate-400">Expert Care For Every Car</div>
-                </div>
-              </div>
-
-              <div class="space-y-3 text-xs text-slate-300">
-                <div class="flex items-center gap-3 p-2.5 rounded-lg bg-slate-950/60 border border-slate-800/80">
-                  <div class="w-8 h-8 rounded-lg bg-blue-950 text-brand-electric flex items-center justify-center flex-shrink-0">
-                    <i class="fa-solid fa-phone"></i>
-                  </div>
-                  <div>
-                    <div class="text-[10px] text-slate-400 uppercase">Direct Helpline</div>
-                    <a href="tel:+919923085169" class="font-bold text-white text-sm hover:text-brand-electric transition">
-                      +91 99230 85169
-                    </a>
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-950/60 border border-slate-800/80">
-                  <div class="w-8 h-8 rounded-lg bg-blue-950 text-brand-electric flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <i class="fa-solid fa-location-dot"></i>
-                  </div>
-                  <div>
-                    <div class="text-[10px] text-slate-400 uppercase">Workshop Address</div>
-                    <div class="font-medium text-slate-200">
-                      Ganesh Nagar, Near Vidhayak Office,<br>
-                      Gondia, Maharashtra - 441601
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-5 grid grid-cols-2 gap-3 pt-2">
-                <a href="tel:+919923085169" class="py-2.5 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-center text-xs font-bold text-white transition flex items-center justify-center gap-2">
-                  <i class="fa-solid fa-phone text-brand-electric"></i> Call Tech
-                </a>
-                <a href="https://wa.me/919923085169?text=Hi%20Shabbir%20bhai,%20I%20need%20to%20get%20my%20car%20checked." target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-500 hover:opacity-95 text-center text-xs font-bold text-white transition flex items-center justify-center gap-2">
-                  <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                </a>
+                <p class="text-xs text-slate-600">Loved by Gondia car owners</p>
               </div>
             </div>
           </div>
 
+          <div class="flex flex-col items-center lg:items-end gap-6">
+            <div class="relative w-full max-w-sm rounded-2xl border-2 border-[#0f172a] bg-white/95 p-4 text-[#0f172a] shadow-[6px_6px_0_#1e3a8a]">
+              <div class="flex items-start justify-between gap-3 border-b border-slate-200 pb-3">
+                <div>
+                  <span class="inline-block rounded border border-blue-200 bg-blue-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-[#1e3a8a]">Multi-Brand Specialist</span>
+                  <h2 class="mt-1.5 font-heading text-xl font-black uppercase text-[#0f172a]">Shabbir Autocare</h2>
+                  <p class="mt-0.5 text-[11px] text-slate-600">Precision Service. Trusted Performance.</p>
+                </div>
+                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-slate-200 bg-slate-50 text-lg text-[#1e3a8a]"><i class="fa-solid fa-car-side"></i></span>
+              </div>
+
+              <div class="my-3 flex items-center gap-2.5 rounded-lg border border-slate-200 bg-slate-50 p-3">
+                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#1e3a8a] to-[#dc2626] text-base text-white"><i class="fa-solid fa-user-gear"></i></span>
+                <div>
+                  <p class="text-[10px] font-semibold uppercase tracking-wider text-[#1e3a8a]">Owner &amp; Chief Technician</p>
+                  <p class="mt-0.5 text-base font-extrabold tracking-wide text-[#0f172a]">SHABBIR SHEIKH</p>
+                  <p class="text-[11px] text-slate-600">Expert care for every car</p>
+                </div>
+              </div>
+
+              <div class="space-y-2 text-sm text-slate-700">
+                <div class="flex items-center gap-2.5 rounded-lg border border-slate-200 bg-white p-2.5">
+                  <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-blue-50 text-sm text-[#1e3a8a]"><i class="fa-solid fa-phone"></i></span>
+                  <div>
+                    <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Direct helpline</p>
+                    <a href="tel:+919923085169" class="font-bold text-[#0f172a] hover:text-[#1e3a8a]">+91 99230 85169</a>
+                  </div>
+                </div>
+                <div class="flex items-start gap-2.5 rounded-lg border border-slate-200 bg-white p-2.5">
+                  <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-red-50 text-sm text-[#b91c1c]"><i class="fa-solid fa-location-dot"></i></span>
+                  <div>
+                    <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Workshop address</p>
+                    <p class="font-medium text-[#0f172a]">Ganesh Nagar, Near Vidhayak Office,<br>Gondia, Maharashtra - 441601</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-3 grid grid-cols-2 gap-2">
+                <a href="tel:+919923085169" class="flex items-center justify-center gap-1.5 rounded-lg bg-[#0f172a] px-2 py-2.5 text-center text-[11px] font-bold text-white transition hover:bg-[#1e3a8a]"><i class="fa-solid fa-phone"></i> Call Tech</a>
+                <a href="https://wa.me/919923085169?text=Hi%20Shabbir%20bhai,%20I%20need%20to%20get%20my%20car%20checked." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 rounded-lg bg-emerald-600 px-2 py-2.5 text-center text-[11px] font-bold text-white transition hover:bg-emerald-700"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+              </div>
+            </div>
+
+          <div class="hidden">
+            <div class="relative w-full max-w-[620px] h-[420px] rounded-[28px] border-[3px] border-[#0f172a] bg-[#edf4fb] p-3 shadow-[10px_10px_0_#d61f2a] overflow-hidden">
+              <svg viewBox="0 0 980 620" class="w-full h-full" role="img" aria-label="Comic-book garage mechanic illustration">
+                <defs>
+                  <linearGradient id="steel" x1="0" x2="1">
+                    <stop offset="0" stop-color="#f1f7ff"/>
+                    <stop offset="0.35" stop-color="#c5d4e8"/>
+                    <stop offset="1" stop-color="#7588a2"/>
+                  </linearGradient>
+                  <linearGradient id="midBlue" x1="0" x2="1">
+                    <stop offset="0" stop-color="#1d4ed8"/>
+                    <stop offset="1" stop-color="#0f172a"/>
+                  </linearGradient>
+                  <linearGradient id="toolRed" x1="0" x2="1">
+                    <stop offset="0" stop-color="#f87171"/>
+                    <stop offset="1" stop-color="#b91c1c"/>
+                  </linearGradient>
+                </defs>
+
+                <g stroke="#0f172a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="0" y="470" width="980" height="150" fill="#e9f0f8"/>
+                  <path d="M0 448 H980" stroke="#b9c7d9" stroke-width="4"/>
+
+                  <g transform="translate(55,120)">
+                    <path d="M20 200 H245 V360 H20 Z" fill="url(#steel)"/>
+                    <path d="M50 200 H100 M80 200 L80 360 M110 200 L110 360 M140 200 L140 360 M170 200 L170 360 M200 200 L200 360" stroke="#627792" stroke-width="6"/>
+                    <path d="M15 160 L72 104 L116 160" fill="none" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M134 160 L193 104 L242 160" fill="none" stroke="#0f172a" stroke-width="10"/>
+                    <circle cx="74" cy="370" r="18" fill="#1f2937"/>
+                    <circle cx="190" cy="370" r="18" fill="#1f2937"/>
+                    <path d="M42 80 H212" stroke="#495a72" stroke-width="7"/>
+                  </g>
+
+                  <g transform="translate(640,300)">
+                    <rect x="0" y="0" width="110" height="130" rx="12" fill="url(#toolRed)"/>
+                    <path d="M20 25 H90 M20 50 H90 M20 75 H90" stroke="#fff7ed" stroke-width="7"/>
+                    <circle cx="30" cy="146" r="18" fill="#1f2937"/>
+                    <circle cx="80" cy="146" r="18" fill="#1f2937"/>
+                    <path d="M55 0 L55 -70" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M55 -72 L22 -110" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M55 -72 L88 -110" stroke="#0f172a" stroke-width="10"/>
+                    <circle cx="55" cy="-128" r="28" fill="#e5e7eb"/>
+                    <circle cx="55" cy="-128" r="13" fill="#0f172a"/>
+                  </g>
+
+                  <g transform="translate(310,205)">
+                    <path d="M120 0 H210 L228 52 H268 L248 128 H82 L62 52 H104 Z" fill="#1e293b"/>
+                    <path d="M100 128 V196 M230 128 V196" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M76 196 H254" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M104 18 H226" stroke="#f8fafc" stroke-width="6" opacity="0.85"/>
+                    <path d="M120 54 H206" stroke="#22d3ee" stroke-width="9"/>
+                    <path d="M126 66 H198" stroke="#fbbf24" stroke-width="6"/>
+                    <circle cx="118" cy="194" r="12" fill="#0f172a"/>
+                    <circle cx="210" cy="194" r="12" fill="#0f172a"/>
+                  </g>
+
+                  <g transform="translate(700,200)">
+                    <circle cx="0" cy="0" r="66" fill="#e5e7eb"/>
+                    <circle cx="0" cy="0" r="36" fill="#0f172a"/>
+                    <path d="M0 -86 L0 -150" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M0 86 L0 150" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M-86 0 L-150 0" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M86 0 L150 0" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M-62 -62 L-110 -108" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M62 -62 L110 -108" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M-62 62 L-110 108" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M62 62 L110 108" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M-70 150 H110" stroke="#0f172a" stroke-width="9"/>
+                  </g>
+
+                  <g transform="translate(470,138)">
+                    <circle cx="0" cy="0" r="35" fill="#f1c6a2" stroke="#0f172a" stroke-width="5"/>
+                    <path d="M-54 -10 Q0 -58 54 -10" fill="#0f172a"/>
+                    <path d="M-26 12 Q0 30 26 12" fill="#0f172a"/>
+                    <path d="M-32 12 C-30 44, 30 44, 32 12" fill="#0f172a"/>
+                    <path d="M-18 26 L-50 88" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M18 26 L48 88" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M-72 96 L-18 86" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M72 96 L18 86" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M-8 36 L-30 108 L-10 138" stroke="#0f172a" stroke-width="10" fill="none"/>
+                    <path d="M8 36 L30 108 L10 138" stroke="#0f172a" stroke-width="10" fill="none"/>
+                    <path d="M-14 70 L-88 66 L-118 102" stroke="#0f172a" stroke-width="9" fill="none"/>
+                    <path d="M14 70 L88 66 L118 102" stroke="#0f172a" stroke-width="9" fill="none"/>
+                    <path d="M-10 138 L98 150" stroke="#0f172a" stroke-width="10"/>
+                    <path d="M34 144 L110 150 L168 118" stroke="#0f172a" stroke-width="10" fill="none"/>
+                    <path d="M-12 138 L-64 178" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M104 152 L104 181" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M-72 148 L-176 136" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M-18 138 L-78 180" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M-20 74 L-72 98 L-112 62" stroke="#1d4ed8" stroke-width="12" fill="none"/>
+                    <path d="M20 74 L72 98 L112 62" stroke="#1d4ed8" stroke-width="12" fill="none"/>
+                    <path d="M-8 0 L-122 -14 L-130 -66" stroke="#0f172a" stroke-width="8" fill="none"/>
+                    <path d="M8 0 L122 -14 L130 -66" stroke="#0f172a" stroke-width="8" fill="none"/>
+                    <path d="M-110 -68 L-82 -126" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M110 -68 L82 -126" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M-80 -126 L-72 -154" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M80 -126 L72 -154" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M-64 -154 L-10 -188" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M64 -154 L10 -188" stroke="#0f172a" stroke-width="8"/>
+                    <rect x="-18" y="-200" width="36" height="18" rx="6" fill="#0f172a"/>
+                    <path d="M-28 -202 L-90 -222" stroke="#0f172a" stroke-width="7"/>
+                    <path d="M28 -202 L90 -222" stroke="#0f172a" stroke-width="7"/>
+                    <path d="M-168 -248 L-82 -200" stroke="#0f172a" stroke-width="8" fill="none"/>
+                    <path d="M168 -248 L82 -200" stroke="#0f172a" stroke-width="8" fill="none"/>
+                    <path d="M-36 150 L-8 196" stroke="#0f172a" stroke-width="8"/>
+                    <path d="M36 150 L8 196" stroke="#0f172a" stroke-width="8"/>
+                  </g>
+
+                  <g transform="translate(330,160)">
+                    <path d="M10 80 H100" stroke="#0f172a" stroke-width="7"/>
+                    <path d="M0 0 L52 30 L74 0" fill="none" stroke="#0f172a" stroke-width="7"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGINE REPAIR VIDEO -->
+    <section id="engine-repair-video" class="py-16 md:py-20 bg-white text-[#0f172a] border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#1e3a8a]">
+              <span class="h-1 w-7 rounded-full bg-[#dc2626]"></span> Engine repair
+            </span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-black uppercase text-[#0f172a]">Engine repair in action</h2>
+            <p class="max-w-xl text-sm sm:text-base leading-relaxed text-slate-700">
+              Watch a mechanic working on a car engine in a professional garage. Book an inspection or engine repair with Shabbir Automobiles Gondia.
+            </p>
+            <button onclick="bookSpecificService('Engine Repair')" class="inline-flex items-center gap-2 rounded-lg bg-[#1e3a8a] px-5 py-3 text-sm font-bold text-white shadow-md transition hover:bg-blue-700">
+              <i class="fa-solid fa-gears"></i> Book Engine Repair
+            </button>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-950 shadow-[0_16px_40px_rgba(15,23,42,0.16)]">
+              <video autoplay loop muted controls playsinline preload="auto" poster="bg-theme.png" class="aspect-video w-full" aria-label="Looping video of a mechanic repairing a car engine">
+                <source src="https://videos.pexels.com/video-files/8987200/8987200-uhd_2560_1440_30fps.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+              </video>
+            </div>
+            <p class="mt-2 text-right text-xs text-slate-500">
+              Video by <a href="https://www.pexels.com/video/an-auto-mechanic-repairing-an-engine-8987200/" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#1e3a8a] hover:underline">Artem Podrez on Pexels</a>
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -422,11 +721,12 @@
       </div>
     </section>
 
+    <div class="light-mode">
     <!-- OUR 8 CORE SERVICES SECTION -->
-    <section id="services" class="py-20 bg-brand-dark relative">
+    <section id="services" class="services-highlight py-20 bg-brand-dark relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="service-heading text-center max-w-3xl mx-auto mb-16">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/90 text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-3 border border-blue-800/50">
             Comprehensive Workshop Solutions
           </div>
@@ -596,7 +896,7 @@
         </div>
 
         <!-- Banner under services -->
-        <div class="mt-14 rounded-2xl bg-gradient-to-r from-blue-950 via-slate-900 to-blue-950 p-6 md:p-8 border border-blue-900/60 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="light-surface mt-14 rounded-2xl bg-gradient-to-r from-blue-950 via-slate-900 to-blue-950 p-6 md:p-8 border border-blue-900/60 flex flex-col md:flex-row items-center justify-between gap-6">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 rounded-full bg-brand-electric/20 text-brand-electric flex items-center justify-center text-xl shrink-0">
               <i class="fa-solid fa-screwdriver-wrench"></i>
@@ -611,6 +911,38 @@
           </a>
         </div>
 
+      </div>
+    </section>
+
+    <!-- OIL CHANGE VIDEO -->
+    <section id="oil-change" class="py-16 md:py-20 border-y border-slate-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#1e3a8a]">
+              <span class="h-1 w-7 rounded-full bg-[#dc2626]"></span> Oil change service
+            </span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-black uppercase text-[#0f172a]">A closer look at an oil change</h2>
+            <p class="max-w-xl text-sm sm:text-base leading-relaxed text-slate-700">
+              See a close-up of fresh engine oil being added during routine car service. Contact Shabbir Automobiles Gondia to book oil change and periodic maintenance.
+            </p>
+            <button onclick="bookSpecificService('Oil Change & Periodic Maintenance')" class="inline-flex items-center gap-2 rounded-lg bg-[#1e3a8a] px-5 py-3 text-sm font-bold text-white shadow-md transition hover:bg-blue-700">
+              <i class="fa-solid fa-oil-can"></i> Book an Oil Change
+            </button>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-950 shadow-[0_16px_40px_rgba(15,23,42,0.16)]">
+              <video autoplay loop muted controls playsinline preload="auto" poster="bg-theme.png" class="aspect-video w-full" aria-label="Looping video showing engine oil being poured into a car engine">
+                <source src="https://videos.pexels.com/video-files/40195933/17171025_1920_1080_60fps.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+              </video>
+            </div>
+            <p class="mt-2 text-right text-xs text-slate-500">
+              Video by <a href="https://www.pexels.com/video/effortless-car-oil-change-close-up-in-garage-40195933/" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#1e3a8a] hover:underline">abdo alshreef on Pexels</a>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -720,7 +1052,7 @@
     <!-- MEET THE CHIEF TECHNICIAN / ABOUT SECTION -->
     <section id="about" class="py-20 bg-brand-dark border-t border-slate-800/80">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto bg-gradient-to-r from-slate-900 via-brand-card to-slate-900 border border-slate-700/80 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        <div class="light-surface max-w-4xl mx-auto bg-gradient-to-r from-slate-900 via-brand-card to-slate-900 border border-slate-700/80 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
           
           <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl"></div>
 
@@ -767,7 +1099,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Google Card Replica Banner -->
-        <div class="max-w-3xl mx-auto rounded-2xl bg-gradient-to-r from-slate-900 to-brand-card p-6 border border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-6 mb-16 shadow-xl">
+        <div class="light-surface max-w-3xl mx-auto rounded-2xl bg-gradient-to-r from-slate-900 to-brand-card p-6 border border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-6 mb-16 shadow-xl">
           <div class="flex items-center gap-4 text-center sm:text-left">
             <div class="w-14 h-14 rounded-2xl bg-white p-2.5 flex items-center justify-center shadow shrink-0">
               <svg viewBox="0 0 24 24" class="w-full h-full">
@@ -908,7 +1240,7 @@
                 </div>
                 <div>
                   <h4 class="font-bold text-white text-sm">Working Hours</h4>
-                  <p class="text-xs text-slate-300 mt-0.5">Monday – Sunday: 9:00 AM – 8:30 PM</p>
+                  <p class="text-xs text-slate-300 mt-0.5">Monday – Sunday: 9:00 AM – 9:00 PM</p>
                   <p class="text-[11px] text-emerald-400 mt-1">Open 7 Days a week for emergencies & planned maintenance</p>
                 </div>
               </div>
@@ -924,7 +1256,7 @@
 
           <!-- Interactive Booking Form Column -->
           <div class="lg:col-span-7">
-            <div class="bg-brand-card/90 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+            <div class="booking-highlight bg-brand-card/90 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
               <h3 class="font-heading text-2xl font-black text-white uppercase tracking-wide">
                 Quick Service Booking
               </h3>
@@ -1001,33 +1333,49 @@
         <div class="mt-16 rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 p-2 shadow-2xl">
           <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80">
             <div>
-              <span class="text-xs uppercase font-bold text-brand-electric">Interactive Map</span>
-              <h4 class="text-white font-bold text-base">Visit Shabbir Autocare in Gondia</h4>
+              <span class="text-xs uppercase font-bold text-brand-electric">Shabbir Automobiles Gondia</span>
+              <h4 class="text-white font-bold text-base">Visit Shabbir Automobiles Gondia</h4>
               <p class="text-xs text-slate-400">Ganesh Nagar, Near Vidhayak Office, Gondia, Maharashtra - 441601</p>
             </div>
-            <a href="https://maps.google.com/?q=Ganesh+Nagar+Near+Vidhayak+Office+Gondia+Maharashtra" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-blue-600/30 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-bold transition flex items-center justify-center gap-2">
+            <a href="https://maps.google.com/?q=Shabbir+Automobiles+Gondia,+Ganesh+Nagar,+Near+Vidhayak+Office,+Maharashtra+441601" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-blue-600/30 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-bold transition flex items-center justify-center gap-2">
               <i class="fa-solid fa-diamond-turn-right"></i> Get Driving Directions
             </a>
           </div>
-          <!-- Google Maps Iframe Embed with clean fallbacks -->
-          <div class="w-full h-80 rounded-xl overflow-hidden bg-slate-900 relative">
-            <iframe 
-              src="https://maps.google.com/maps?q=Ganesh+Nagar,+Gondia,+Maharashtra+441601&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-              class="w-full h-full border-0 filter grayscale contrast-125 opacity-90 hover:opacity-100 transition"
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+          <div class="relative h-80 w-full overflow-hidden rounded-xl bg-[#e8eee8]" role="group" aria-label="Street map of Gondia, Maharashtra">
+            <div class="absolute left-1/2 top-1/2 grid w-[1280px] max-w-none -translate-x-1/2 -translate-y-1/2 grid-cols-5">
+              <img src="https://tile.openstreetmap.org/15/23680/14382.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+              <img src="https://tile.openstreetmap.org/15/23681/14382.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+              <img src="https://tile.openstreetmap.org/15/23682/14382.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+              <img src="https://tile.openstreetmap.org/15/23683/14382.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+              <img src="https://tile.openstreetmap.org/15/23684/14382.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+              <img src="https://tile.openstreetmap.org/15/23680/14383.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+              <img src="https://tile.openstreetmap.org/15/23681/14383.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+              <img src="https://tile.openstreetmap.org/15/23682/14383.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+              <img src="https://tile.openstreetmap.org/15/23683/14383.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+              <img src="https://tile.openstreetmap.org/15/23684/14383.png" alt="" class="aspect-square w-full" loading="lazy" decoding="async">
+            </div>
+            <div id="gondiaMapFallbackPin" class="pointer-events-none absolute left-[48%] top-[55%] z-20 flex -translate-x-1/2 -translate-y-full flex-col items-center drop-shadow-md">
+              <span class="mb-1 rounded bg-white px-2 py-1 text-[11px] font-bold text-[#0f172a]">Vidhayak Office</span>
+              <i class="fa-solid fa-location-dot text-2xl text-[#dc2626]"></i>
+            </div>
+            <div id="gondiaLeafletMap" class="absolute inset-0 z-10" aria-label="Interactive map showing Shabbir Automobiles Gondia"></div>
+            <div class="absolute bottom-2 right-2 z-30 flex items-center gap-2 rounded bg-white/95 px-2 py-1 text-[10px] text-slate-700 shadow">
+              <a href="https://www.openstreetmap.org/#map=16/21.45732/80.19556" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#1e3a8a] hover:underline">Open interactive map</a>
+              <span aria-hidden="true">|</span>
+              <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" class="hover:underline">© OpenStreetMap</a>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
 
+    </div>
+
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
+  <footer class="light-mode bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
         
@@ -1063,7 +1411,7 @@
           <p class="text-slate-300 font-semibold"><i class="fa-solid fa-user text-brand-electric mr-1"></i> Shabbir Sheikh (Chief Tech)</p>
           <p><i class="fa-solid fa-phone text-brand-electric mr-1"></i> <a href="tel:+919923085169" class="hover:text-white">+91 99230 85169</a></p>
           <p><i class="fa-solid fa-location-dot text-brand-electric mr-1"></i> Ganesh Nagar, Near Vidhayak Office, Gondia – 441601</p>
-          <p><i class="fa-solid fa-clock text-brand-electric mr-1"></i> Mon - Sun: 9:00 AM - 8:30 PM</p>
+          <p><i class="fa-solid fa-clock text-brand-electric mr-1"></i> Mon - Sun: 9:00 AM - 9:00 PM</p>
         </div>
 
         <!-- Col 4: Quick Action -->
@@ -1097,13 +1445,21 @@
 
   <!-- FLOATING BOTTOM QUICK ACTION BAR (Mobile & Desktop) -->
   <div class="fixed bottom-4 right-4 z-50 flex items-center gap-3">
+    <!-- Booking Floating Action -->
+    <button onclick="openBookingModal()" title="Book a service" aria-label="Book a service" class="w-14 h-14 p-3.5 rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white shadow-xl shadow-blue-600/40 flex items-center justify-center transition transform hover:scale-110 active:scale-95">
+      <i class="fa-regular fa-calendar-check text-xl"></i>
+    </button>
     <!-- Call Pill -->
-    <a href="tel:+919923085169" title="Call Shabbir Autocare" class="w-13 h-13 p-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/50 flex items-center justify-center transition transform hover:scale-110 active:scale-95">
+    <a href="tel:+919923085169" title="Call Shabbir Automobiles Gondia" aria-label="Call Shabbir Automobiles Gondia at +91 99230 85169" class="w-13 h-13 p-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/50 flex items-center justify-center transition transform hover:scale-110 active:scale-95">
       <i class="fa-solid fa-phone text-lg"></i>
     </a>
     <!-- WhatsApp Floating Action -->
     <a href="https://wa.me/919923085169?text=Hello%20Shabbir%20Autocare,%20I%20would%20like%20to%20inquire%20about%20car%20service." target="_blank" rel="noopener noreferrer" title="WhatsApp Us" class="w-14 h-14 p-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-xl shadow-emerald-500/50 flex items-center justify-center transition transform hover:scale-110 active:scale-95">
       <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+    <!-- Workshop Location Floating Action -->
+    <a href="https://maps.google.com/?q=Shabbir+Automobiles+Gondia,+Ganesh+Nagar,+Near+Vidhayak+Office,+Maharashtra+441601" target="_blank" rel="noopener noreferrer" title="Open Shabbir Automobiles Gondia in Google Maps" aria-label="Open Shabbir Automobiles Gondia in Google Maps" class="w-14 h-14 p-3.5 rounded-full bg-[#dc2626] hover:bg-red-700 text-white shadow-xl shadow-red-600/40 flex items-center justify-center transition transform hover:scale-110 active:scale-95">
+      <i class="fa-solid fa-location-dot text-xl"></i>
     </a>
   </div>
 
@@ -1165,6 +1521,26 @@
       </form>
     </div>
   </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const gondiaMapElement = document.getElementById('gondiaLeafletMap');
+    if (window.L && gondiaMapElement) {
+      const shopCoordinates = [21.45732, 80.19556];
+      const gondiaMap = L.map(gondiaMapElement, { scrollWheelZoom: false }).setView(shopCoordinates, 16);
+
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+      }).addTo(gondiaMap);
+
+      L.marker(shopCoordinates).addTo(gondiaMap)
+        .bindPopup('<strong>Shabbir Automobiles Gondia</strong><br>Ganesh Nagar<br>Landmark: Vidhayak Office<br>Gondia, Maharashtra - 441601')
+        .openPopup();
+
+      document.getElementById('gondiaMapFallbackPin').classList.add('hidden');
+    }
+  </script>
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
@@ -1235,19 +1611,40 @@
     // Form submission handler with friendly status box (no alerts)
     function handleFormSubmit(event, messageBoxId) {
       event.preventDefault();
+      const form = event.currentTarget;
       const msgBox = document.getElementById(messageBoxId);
-      
-      if (msgBox) {
-        msgBox.className = "p-3 rounded-xl text-xs font-semibold bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 block";
-        msgBox.innerHTML = "<i class='fa-solid fa-circle-check mr-1.5'></i> Thank you! Your booking request has been sent to Shabbir Autocare. We will call you shortly to confirm your slot.";
-        
-        event.target.reset();
 
-        if (messageBoxId === 'modalFormMessage') {
-          setTimeout(() => {
-            closeBookingModal();
-          }, 3500);
-        }
+      const bookingDetails = Array.from(form.querySelectorAll('input, select, textarea'))
+        .filter((field) => field.value.trim())
+        .map((field) => {
+          const label = field.parentElement.querySelector('label');
+          const fieldName = label ? label.textContent.replace(/\s*\*/g, '').trim() : 'Details';
+          const fieldValue = field instanceof HTMLSelectElement
+            ? field.selectedOptions[0].textContent.trim()
+            : field.value.trim();
+          return `${fieldName}: ${fieldValue}`;
+        });
+      const whatsappMessage = [
+        'Hello Shabbir Automobiles Gondia, I would like to book a service:',
+        '',
+        ...bookingDetails
+      ].join('\n');
+      const whatsappUrl = `https://wa.me/919923085169?text=${encodeURIComponent(whatsappMessage)}`;
+
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+      if (msgBox) {
+        msgBox.className = 'mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-xs font-medium text-emerald-900';
+        msgBox.replaceChildren(
+          document.createTextNode('Your booking details are ready in WhatsApp. Review them and tap Send. ')
+        );
+        const whatsappLink = document.createElement('a');
+        whatsappLink.href = whatsappUrl;
+        whatsappLink.target = '_blank';
+        whatsappLink.rel = 'noopener noreferrer';
+        whatsappLink.className = 'font-bold underline';
+        whatsappLink.textContent = 'Open WhatsApp';
+        msgBox.append(whatsappLink);
       }
     }
 
