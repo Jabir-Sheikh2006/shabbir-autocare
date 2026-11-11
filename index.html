@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shabbir Autocare | Multi-Brand Car Service & Repair in Gondia</title>
+  <meta name="description" content="Shabbir Autocare - Multi-Brand Car Service & Repair in Gondia, Maharashtra. Expert Engine Repair, Brake & Suspension, Car Diagnostics & Periodic Maintenance by Shabbir Sheikh.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Montserrat for aggressive automotive styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#070b14',
+              surface: '#0f172a',
+              card: '#142038',
+              cardBorder: '#1e3357',
+              blue: '#0070f3',
+              electric: '#00b4d8',
+              cyan: '#38bdf8',
+              accent: '#2563eb',
+              gold: '#fbbf24'
+            }
+          },
+          backgroundImage: {
+            'glow-radial': 'radial-gradient(circle at 50% 0%, rgba(0, 180, 216, 0.15) 0%, rgba(7, 11, 20, 0) 70%)',
+            'gradient-metallic': 'linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #020617 100%)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070b14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e3357;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00b4d8;
+    }
+
+    /* Subtle carbon/grid texture */
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    .clip-slanted {
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    }
+
+    .glow-border {
+      box-shadow: 0 0 25px -5px rgba(0, 180, 216, 0.3);
+    }
+    .glow-border:hover {
+      box-shadow: 0 0 35px 0px rgba(0, 180, 216, 0.55);
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans selection:bg-brand-electric selection:text-black min-h-screen flex flex-col antialiased">
+
+  <!-- TOP NOTIFICATION / QUICK BAR -->
+  <div class="bg-slate-950 border-b border-slate-800/80 text-xs py-2 px-4 sm:px-8 text-slate-400">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5 text-brand-electric font-medium">
+          <i class="fa-solid fa-location-dot text-brand-cyan"></i> Gondia, Maharashtra (441601)
+        </span>
+        <span class="hidden md:inline-block text-slate-600">|</span>
+        <span class="hidden md:flex items-center gap-1.5 text-slate-300">
+          <i class="fa-solid fa-clock text-brand-electric"></i> Mon - Sun: 9:00 AM - 8:30 PM
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:+919923085169" class="hover:text-white transition flex items-center gap-1.5 font-semibold text-slate-200">
+          <i class="fa-solid fa-phone text-brand-electric"></i> +91 99230 85169
+        </a>
+        <a href="https://wa.me/919923085169?text=Hi%20Shabbir%20Autocare,%20I%20would%20like%20to%20inquire%20about%20car%20service." target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1">
+          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-brand-surface/90 backdrop-blur-md border-b border-slate-800/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- LOGO -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-700 via-brand-blue to-brand-electric flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:scale-105 transition duration-300">
+          <i class="fa-solid fa-gear text-2xl text-white animate-[spin_12s_linear_infinite]"></i>
+        </div>
+        <div>
+          <div class="font-heading font-black tracking-wider text-xl sm:text-2xl text-white uppercase flex items-center gap-1.5">
+            SHABBIR <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-electric to-blue-400">AUTOCARE</span>
+          </div>
+          <p class="text-[10px] tracking-widest text-slate-400 uppercase font-semibold">Multi-Brand Car Service & Repair</p>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAV LINKS -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold tracking-wide">
+        <a href="#services" class="text-slate-300 hover:text-brand-electric transition">Services</a>
+        <a href="#why-us" class="text-slate-300 hover:text-brand-electric transition">Why Us</a>
+        <a href="#about" class="text-slate-300 hover:text-brand-electric transition">About</a>
+        <a href="#reviews" class="text-slate-300 hover:text-brand-electric transition">Reviews</a>
+        <a href="#contact" class="text-slate-300 hover:text-brand-electric transition">Location</a>
+      </nav>
+
+      <!-- CTA ACTION BUTTONS -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="tel:+919923085169" class="px-4 py-2.5 rounded-xl border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 text-sm font-semibold flex items-center gap-2 transition">
+          <i class="fa-solid fa-phone text-brand-electric"></i> Call Now
+        </a>
+        <button onclick="openBookingModal()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-brand-blue to-cyan-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 hover:shadow-cyan-500/40 hover:opacity-95 transition flex items-center gap-2">
+          <i class="fa-regular fa-calendar-check"></i> Book Service
+        </button>
+      </div>
+
+      <!-- MOBILE MENU BUTTON -->
+      <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="lg:hidden text-slate-300 hover:text-white p-2 rounded-lg bg-slate-800/80">
+        <i id="menuIcon" class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- MOBILE MENU DROPDOWN -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-brand-surface border-b border-slate-800 px-6 py-5 flex flex-col gap-4 text-base font-semibold">
+      <a href="#services" class="mobile-nav-link text-slate-200 hover:text-brand-electric transition">Services</a>
+      <a href="#why-us" class="mobile-nav-link text-slate-200 hover:text-brand-electric transition">Why Us</a>
+      <a href="#about" class="mobile-nav-link text-slate-200 hover:text-brand-electric transition">About Owner & Team</a>
+      <a href="#reviews" class="mobile-nav-link text-slate-200 hover:text-brand-electric transition">Customer Reviews</a>
+      <a href="#contact" class="mobile-nav-link text-slate-200 hover:text-brand-electric transition">Location & Contact</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="openBookingModal(); toggleMobileMenu();" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-center">
+          Book Appointment
+        </button>
+        <a href="tel:+919923085169" class="w-full py-3 rounded-xl bg-slate-800 border border-slate-700 text-center font-bold text-slate-200 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-brand-electric"></i> Call +91 99230 85169
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <main class="flex-grow">
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-grid-pattern overflow-hidden pt-12 pb-20 md:py-24 border-b border-slate-800/60">
+      <!-- Glow ambient lights -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-blue/15 blur-[120px] rounded-full pointer-events-none"></div>
+      <div class="absolute top-10 right-10 w-72 h-72 bg-brand-electric/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- LEFT HERO CONTENT -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/70 border border-blue-500/30 text-brand-cyan text-xs font-semibold uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-brand-electric animate-ping"></span>
+              Gondia's Trusted Multi-Brand Garage
+            </div>
+
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight uppercase leading-[1.1]">
+              PRECISION SERVICE. <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-electric via-blue-400 to-cyan-300">
+                TRUSTED PERFORMANCE.
+              </span>
+            </h1>
+
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              Led by <span class="text-white font-semibold">Shabbir Sheikh</span> (Owner & Chief Technician), we deliver dealership-grade computerized car diagnostics, complete engine overhauls, suspension repairs, brake servicing, and routine maintenance for all car makes and models.
+            </p>
+
+            <!-- VALUE PILLS -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs font-semibold text-slate-300">
+              <div class="flex items-center gap-2 bg-slate-900/80 px-3.5 py-2 rounded-lg border border-slate-800">
+                <i class="fa-solid fa-shield-halved text-brand-electric"></i> 100% Genuine Parts
+              </div>
+              <div class="flex items-center gap-2 bg-slate-900/80 px-3.5 py-2 rounded-lg border border-slate-800">
+                <i class="fa-solid fa-laptop-code text-brand-electric"></i> Computerized Diagnostics
+              </div>
+              <div class="flex items-center gap-2 bg-slate-900/80 px-3.5 py-2 rounded-lg border border-slate-800">
+                <i class="fa-solid fa-car-side text-brand-electric"></i> Multi-Brand Specialist
+              </div>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+              <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 text-white font-bold text-base shadow-xl shadow-blue-600/30 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-wrench"></i> Book Your Service Now
+              </button>
+              <a href="https://wa.me/919923085169?text=Hello%20Shabbir%20Autocare,%20I%20need%20a%20repair%20quote%20for%20my%20car." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-4 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 text-white font-bold text-base transition flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-900/20">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+              </a>
+            </div>
+
+            <!-- GOOGLE BADGE MINI CALLOUT -->
+            <div class="pt-4 flex items-center justify-center lg:justify-start gap-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-white p-1.5 shadow">
+                <svg viewBox="0 0 24 24" class="w-full h-full">
+                  <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/>
+                  <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.94H1.27v3.15C3.25 21.32 7.31 24 12 24z"/>
+                  <path fill="#FBBC05" d="M5.28 14.26c-.25-.72-.38-1.49-.38-2.26s.13-1.54.38-2.26V6.59H1.27C.46 8.21 0 10.05 0 12s.46 3.79 1.27 5.41l4.01-3.15z"/>
+                  <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.25 2.68 1.27 6.59l4.01 3.15c.95-2.84 3.6-4.99 6.72-4.99z"/>
+                </svg>
+              </div>
+              <div class="text-left">
+                <div class="flex items-center gap-1 text-brand-gold text-sm">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span class="text-white font-bold ml-1">5.0</span>
+                </div>
+                <p class="text-xs text-slate-400">Loved by Gondia Car Owners on Google</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT HERO CARD: Digital Visiting Card Replica -->
+          <div class="lg:col-span-5">
+            <div class="relative mx-auto max-w-md bg-gradient-to-b from-brand-card to-slate-950 border-2 border-brand-cardBorder rounded-2xl p-6 shadow-2xl overflow-hidden glow-border">
+              <!-- Decorative tech lines -->
+              <div class="absolute -right-16 -top-16 w-48 h-48 bg-brand-blue/20 rounded-full blur-2xl"></div>
+              <div class="absolute top-0 right-0 w-32 h-1 bg-gradient-to-l from-brand-cyan to-transparent"></div>
+
+              <!-- Card Header -->
+              <div class="flex items-start justify-between border-b border-slate-800 pb-5">
+                <div>
+                  <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-brand-cyan bg-blue-950/80 px-2.5 py-0.5 rounded border border-blue-800/60 mb-1">
+                    Multi-Brand Specialist
+                  </span>
+                  <h2 class="font-heading text-2xl font-black text-white uppercase tracking-wider">Shabbir Autocare</h2>
+                  <p class="text-xs text-slate-400">Precision Service. Trusted Performance.</p>
+                </div>
+                <!-- Stylized Gear Icon -->
+                <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-electric">
+                  <i class="fa-solid fa-car text-xl"></i>
+                </div>
+              </div>
+
+              <!-- Owner highlight -->
+              <div class="my-5 p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-slate-800 flex items-center justify-center text-white text-lg font-bold shadow-md">
+                  <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-brand-cyan font-semibold uppercase tracking-wider">Owner & Chief Technician</div>
+                  <div class="text-lg font-bold text-white tracking-wide">SHABBIR SHEIKH</div>
+                  <div class="text-xs text-slate-400">Expert Care For Every Car</div>
+                </div>
+              </div>
+
+              <!-- Contact & Location info snippet -->
+              <div class="space-y-3 text-xs text-slate-300">
+                <div class="flex items-center gap-3 p-2.5 rounded-lg bg-slate-950/60 border border-slate-800/80">
+                  <div class="w-8 h-8 rounded-lg bg-blue-950 text-brand-electric flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-slate-400 uppercase">Direct Helpline</div>
+                    <a href="tel:+919923085169" class="font-bold text-white text-sm hover:text-brand-electric transition">
+                      +91 99230 85169
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-2.5 rounded-lg bg-slate-950/60 border border-slate-800/80">
+                  <div class="w-8 h-8 rounded-lg bg-blue-950 text-brand-electric flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-slate-400 uppercase">Workshop Address</div>
+                    <div class="font-medium text-slate-200">
+                      Ganesh Nagar, Near Vidhayak Office,<br>
+                      Gondia, Maharashtra - 441601
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Quick CTA -->
+              <div class="mt-5 grid grid-cols-2 gap-3 pt-2">
+                <a href="tel:+919923085169" class="py-2.5 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-center text-xs font-bold text-white transition flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-phone text-brand-electric"></i> Call Tech
+                </a>
+                <a href="https://wa.me/919923085169?text=Hi%20Shabbir%20bhai,%20I%20need%20to%20get%20my%20car%20checked." target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-500 hover:opacity-95 text-center text-xs font-bold text-white transition flex items-center justify-center gap-2">
+                  <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATS / TRUST METRICS -->
+    <section class="py-8 bg-slate-950 border-b border-slate-800/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="p-4 rounded-xl bg-brand-surface/50 border border-slate-800/60">
+            <div class="text-3xl font-black font-heading text-brand-electric">100%</div>
+            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Multi-Brand Coverage</div>
+          </div>
+          <div class="p-4 rounded-xl bg-brand-surface/50 border border-slate-800/60">
+            <div class="text-3xl font-black font-heading text-brand-cyan">40+</div>
+            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Years Mech Experience</div>
+          </div>
+          <div class="p-4 rounded-xl bg-brand-surface/50 border border-slate-800/60">
+            <div class="text-3xl font-black font-heading text-brand-electric">OBD-II</div>
+            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Digital Scanner Tech</div>
+          </div>
+          <div class="p-4 rounded-xl bg-brand-surface/50 border border-slate-800/60">
+            <div class="text-3xl font-black font-heading text-brand-gold">5.0 ★</div>
+            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Customer Rated</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR 8 CORE SERVICES SECTION -->
+    <section id="services" class="py-20 bg-brand-dark relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/90 text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-3 border border-blue-800/50">
+            Comprehensive Workshop Solutions
+          </div>
+          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight">
+            Our Specialist Services
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed">
+            From minor preventative check-ups to complex engine teardowns, Shabbir Autocare delivers uncompromising craftsmanship using authentic grade lubricants and OE spares.
+          </p>
+        </div>
+
+        <!-- 8 SERVICES GRID (Matched directly to Visiting Card) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- 1. Engine Repair -->
+          <div class="group bg-brand-card/70 hover:bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-electric/60 transition duration-300 flex flex-col justify-between glow-border">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-900 to-slate-800 border border-blue-500/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 group-hover:text-white transition">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-brand-electric transition">Engine Repair & Overhaul</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                Complete mechanical diagnoses, timing belts, cylinder head gasket repair, valve timing, cooling system fix, and complete rebuilds for smooth revving.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-slate-400">Pet./Diesel/CNG</span>
+              <button onclick="bookSpecificService('Engine Repair')" class="text-xs font-bold text-brand-cyan hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition">
+                Book This <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Suspension Work -->
+          <div class="group bg-brand-card/70 hover:bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-electric/60 transition duration-300 flex flex-col justify-between glow-border">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-900 to-slate-800 border border-blue-500/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 group-hover:text-white transition">
+                <i class="fa-solid fa-arrows-up-down-left-right"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-brand-electric transition">Suspension Work</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                Strut & shock absorber replacement, lower arm bushings, link rods, steering racks, eliminating road vibrations and rattling noises.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-slate-400">Smooth Ride</span>
+              <button onclick="bookSpecificService('Suspension Work')" class="text-xs font-bold text-brand-cyan hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition">
+                Book This <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Brake Service -->
+          <div class="group bg-brand-card/70 hover:bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-electric/60 transition duration-300 flex flex-col justify-between glow-border">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-900 to-slate-800 border border-blue-500/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 group-hover:text-white transition">
+                <i class="fa-solid fa-circle-dot"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-brand-electric transition">Brake Service</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                Disc brake pad replacement, drum brake shoe servicing, rotor skimming, caliper greasing, and hydraulic brake fluid bleed for utmost safety.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-slate-400">Max Safety</span>
+              <button onclick="bookSpecificService('Brake Service')" class="text-xs font-bold text-brand-cyan hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition">
+                Book This <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. Battery Service -->
+          <div class="group bg-brand-card/70 hover:bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-electric/60 transition duration-300 flex flex-col justify-between glow-border">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-900 to-slate-800 border border-blue-500/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 group-hover:text-white transition">
+                <i class="fa-solid fa-car-battery"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-brand-electric transition">Battery Service</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                Digital cranking voltage test, alternator charging rate verification, terminal corrosion cleaning, top-up, and quick replacement with branded units.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-slate-400">Instant Ignition</span>
+              <button onclick="bookSpecificService('Battery Service')" class="text-xs font-bold text-brand-cyan hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition">
+                Book This <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 5. Car Diagnostics -->
+          <div class="group bg-brand-card/70 hover:bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-electric/60 transition duration-300 flex flex-col justify-between glow-border">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-900 to-slate-800 border border-blue-500/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 group-hover:text-white transition">
+                <i class="fa-solid fa-laptop-medical"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-brand-electric transition">Computer Diagnostics</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                Check Engine Light scanning, ECU error code clearing, live sensor data readouts, fuel injection check, and sensor calibrations.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-slate-400">OBD-II Scanners</span>
+              <button onclick="bookSpecificService('Car Diagnostics')" class="text-xs font-bold text-brand-cyan hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition">
+                Book This <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 6. General Repair -->
+          <div class="group bg-brand-card/70 hover:bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-electric/60 transition duration-300 flex flex-col justify-between glow-border">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-900 to-slate-800 border border-blue-500/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 group-hover:text-white transition">
+                <i class="fa-solid fa-wrench"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-brand-electric transition">General Repair</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                Clutch assembly overhaul, radiator flush, AC gas refill & cooling checks, headlight restorations, exhaust fixes, and mechanical wear solutions.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-slate-400">All-in-One</span>
+              <button onclick="bookSpecificService('General Repair')" class="text-xs font-bold text-brand-cyan hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition">
+                Book This <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 7. Oil Change & Periodic Maintenance -->
+          <div class="group bg-brand-card/70 hover:bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-electric/60 transition duration-300 flex flex-col justify-between glow-border">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-900 to-slate-800 border border-blue-500/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 group-hover:text-white transition">
+                <i class="fa-solid fa-oil-can"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-brand-electric transition">Oil Change & Maintenance</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                Synthetic & semi-synthetic engine oils, genuine oil filter & air filter replacement, cabin filter cleanup, fluid top-ups and 35-point safety check.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-slate-400">Regular Service</span>
+              <button onclick="bookSpecificService('Oil Change & Periodic Maintenance')" class="text-xs font-bold text-brand-cyan hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition">
+                Book This <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 8. Multi-Brand Car Service -->
+          <div class="group bg-brand-card/70 hover:bg-brand-card p-6 rounded-2xl border border-slate-800 hover:border-brand-electric/60 transition duration-300 flex flex-col justify-between glow-border">
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-blue-900 to-slate-800 border border-blue-500/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 group-hover:text-white transition">
+                <i class="fa-solid fa-car-tunnel"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-brand-electric transition">Multi-Brand Car Service</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                Maruti Suzuki, Hyundai, Tata, Mahindra, Toyota, Honda, Kia, Volkswagen, Skoda, Ford, Renault and more. Exact manufacturer guidelines followed.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-slate-400">All Makes</span>
+              <button onclick="bookSpecificService('Multi-Brand Car Service')" class="text-xs font-bold text-brand-cyan hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition">
+                Book This <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner under services -->
+        <div class="mt-14 rounded-2xl bg-gradient-to-r from-blue-950 via-slate-900 to-blue-950 p-6 md:p-8 border border-blue-900/60 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-brand-electric/20 text-brand-electric flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-lg">Not sure what is wrong with your vehicle?</h4>
+              <p class="text-slate-400 text-xs sm:text-sm">Bring your car for an initial computerized diagnostic scan and mechanical inspection by Shabbir Sheikh.</p>
+            </div>
+          </div>
+          <a href="tel:+919923085169" class="shrink-0 px-6 py-3 rounded-xl bg-brand-electric text-slate-950 font-bold text-sm hover:bg-cyan-300 transition flex items-center gap-2">
+            <i class="fa-solid fa-phone"></i> Call for Expert Advice
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BRANDS WE SERVICE (Multi-Brand Showcase) -->
+    <section class="py-12 bg-slate-950 border-y border-slate-800/60 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">Brands Serviced with Dealership Standard Tools</p>
+        <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-slate-400 font-semibold text-sm">
+          <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition">Maruti Suzuki</span>
+          <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition">Hyundai</span>
+          <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition">Tata Motors</span>
+          <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition">Mahindra</span>
+          <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition">Toyota</span>
+          <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition">Honda</span>
+          <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition">Kia</span>
+          <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition">Volkswagen & Skoda</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE SHABBIR AUTOCARE -->
+    <section id="why-us" class="py-20 bg-brand-surface relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/80 text-brand-cyan text-xs font-semibold uppercase tracking-wider border border-blue-800/40">
+              Why Gondia Chooses Us
+            </div>
+            <h2 class="font-heading text-3xl sm:text-4xl font-black text-white uppercase tracking-tight leading-snug">
+              Dealer-Quality Repairs, <br>
+              <span class="text-brand-electric">Honest Local Pricing.</span>
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              At Shabbir Autocare, you don't talk to a desk agent—you speak directly with <strong>Shabbir Sheikh</strong>, who personally oversees every diagnosis, torque check, and test drive.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <div class="flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-blue-600/20 text-brand-electric flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-check text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold text-sm">Transparent Cost Estimates</h4>
+                  <p class="text-xs text-slate-400 mt-0.5">No surprise bills. We give you a straightforward upfront quote before unbolting any part.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-blue-600/20 text-brand-electric flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-check text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold text-sm">Authentic Replacement Spares & Lubricants</h4>
+                  <p class="text-xs text-slate-400 mt-0.5">We source OEM & certified OES spares, premium grade synthetic oils ensuring peak engine lifespan.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-blue-600/20 text-brand-electric flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-check text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold text-sm">Fast Turnaround & Post-Service Support</h4>
+                  <p class="text-xs text-slate-400 mt-0.5">Most regular periodic services completed same-day so you get back on Gondia roads quickly.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <button onclick="openBookingModal()" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-white text-slate-900 font-bold text-sm transition">
+                Schedule Workshop Visit
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-6 rounded-2xl bg-brand-card border border-slate-800 space-y-3">
+              <div class="text-3xl text-brand-electric"><i class="fa-solid fa-gauge-high"></i></div>
+              <h4 class="text-base font-bold text-white">Diagnostic Accuracy</h4>
+              <p class="text-xs text-slate-400">Advanced diagnostic scan tools pinpoint sensor faults, eliminating trial-and-error guesswork.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-brand-card border border-slate-800 space-y-3">
+              <div class="text-3xl text-brand-electric"><i class="fa-solid fa-shield-cat"></i></div>
+              <h4 class="text-base font-bold text-white">Guaranteed Work</h4>
+              <p class="text-xs text-slate-400">Full technician accountability on every replacement, suspension tweak, and engine tuning job.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-brand-card border border-slate-800 space-y-3">
+              <div class="text-3xl text-brand-electric"><i class="fa-solid fa-handshake"></i></div>
+              <h4 class="text-base font-bold text-white">Direct Tech Access</h4>
+              <p class="text-xs text-slate-400">Speak directly with master mechanic Shabbir Sheikh about issues or upcoming road trip checks.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-brand-card border border-slate-800 space-y-3">
+              <div class="text-3xl text-brand-electric"><i class="fa-solid fa-location-crosshairs"></i></div>
+              <h4 class="text-base font-bold text-white">Prime Gondia Location</h4>
+              <p class="text-xs text-slate-400">Easily accessible at Ganesh Nagar, right near Vidhayak Office with secure workshop parking.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MEET THE CHIEF TECHNICIAN / ABOUT SECTION -->
+    <section id="about" class="py-20 bg-brand-dark border-t border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto bg-gradient-to-r from-slate-900 via-brand-card to-slate-900 border border-slate-700/80 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+          
+          <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl"></div>
+
+          <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+            <!-- Avatar / Icon badge -->
+            <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-gradient-to-br from-blue-700 via-brand-blue to-cyan-500 p-1 flex-shrink-0 shadow-xl">
+              <div class="w-full h-full bg-slate-950 rounded-[14px] flex flex-col items-center justify-center text-brand-cyan">
+                <i class="fa-solid fa-user-tie text-4xl sm:text-5xl mb-1 text-white"></i>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-brand-electric">Master Tech</span>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="inline-block px-3 py-1 rounded bg-blue-950 text-brand-cyan text-xs font-bold uppercase tracking-wider border border-blue-800">
+                Workshop Leadership
+              </div>
+              <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase">
+                Shabbir Sheikh
+              </h3>
+              <p class="text-brand-electric text-sm font-semibold tracking-wide">
+                Owner & Chief Technician — Shabbir Autocare
+              </p>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1">
+                "Our promise to every car owner in Gondia is simple: <strong>honest assessments, genuine advice, and precision workmanship</strong>. Whether your car has an elusive engine sound, poor braking feel, or needs its routine 10,000 km oil service, we treat your car with the precision and care it deserves."
+              </p>
+
+              <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-3">
+                <a href="tel:+919923085169" class="text-xs font-bold px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white flex items-center gap-1.5 transition">
+                  <i class="fa-solid fa-phone"></i> +91 99230 85169
+                </a>
+                <a href="https://wa.me/919923085169?text=Hello%20Shabbir%20Bhai,%20I%20have%20a%20query%20about%20my%20vehicle." target="_blank" rel="noopener noreferrer" class="text-xs font-bold px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white flex items-center gap-1.5 transition">
+                  <i class="fa-brands fa-whatsapp"></i> Chat with Shabbir
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GOOGLE REVIEWS & TESTIMONIALS SECTION -->
+    <section id="reviews" class="py-20 bg-slate-950 border-t border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Google Card Replica Banner -->
+        <div class="max-w-3xl mx-auto rounded-2xl bg-gradient-to-r from-slate-900 to-brand-card p-6 border border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-6 mb-16 shadow-xl">
+          <div class="flex items-center gap-4 text-center sm:text-left">
+            <div class="w-14 h-14 rounded-2xl bg-white p-2.5 flex items-center justify-center shadow shrink-0">
+              <svg viewBox="0 0 24 24" class="w-full h-full">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/>
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.94H1.27v3.15C3.25 21.32 7.31 24 12 24z"/>
+                <path fill="#FBBC05" d="M5.28 14.26c-.25-.72-.38-1.49-.38-2.26s.13-1.54.38-2.26V6.59H1.27C.46 8.21 0 10.05 0 12s.46 3.79 1.27 5.41l4.01-3.15z"/>
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.25 2.68 1.27 6.59l4.01 3.15c.95-2.84 3.6-4.99 6.72-4.99z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-xs uppercase font-bold tracking-wider text-brand-electric">Love Our Service?</div>
+              <h3 class="text-xl font-black text-white">LEAVE US A REVIEW ON GOOGLE</h3>
+              <p class="text-xs text-slate-400">Your feedback drives us to serve you better!</p>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Ganesh+Nagar+Near+Vidhayak+Office+Gondia+Maharashtra" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-white hover:bg-slate-200 text-slate-900 font-bold text-xs uppercase tracking-wider shrink-0 transition flex items-center gap-2 shadow">
+            <i class="fa-solid fa-pen-to-square text-blue-600"></i> Write a Review
+          </a>
+        </div>
+
+        <!-- REVIEWS GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="p-6 rounded-2xl bg-brand-surface border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1 text-brand-gold text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-slate-500 text-xs">2 weeks ago</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed italic">
+              "Had a bad suspension noise in my Swift that authorized centers couldn't fix properly. Shabbir bhai identified the bad link rod and arm bushing in 10 minutes. Car feels brand new now!"
+            </p>
+            <div class="flex items-center gap-3 pt-2 border-t border-slate-800/80">
+              <div class="w-8 h-8 rounded-full bg-blue-900 text-brand-cyan font-bold text-xs flex items-center justify-center">RK</div>
+              <div>
+                <div class="text-xs font-bold text-white">Rahul K.</div>
+                <div class="text-[10px] text-slate-400">Maruti Swift Owner • Gondia</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-brand-surface border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1 text-brand-gold text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-slate-500 text-xs">1 month ago</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed italic">
+              "Honest mechanic. My Creta had check engine light on during highway trip. They used computerized scanner, diagnosed a faulty O2 sensor, cleaned it, and did not try to overcharge me."
+            </p>
+            <div class="flex items-center gap-3 pt-2 border-t border-slate-800/80">
+              <div class="w-8 h-8 rounded-full bg-blue-900 text-brand-cyan font-bold text-xs flex items-center justify-center">AS</div>
+              <div>
+                <div class="text-xs font-bold text-white">Amit Sharma</div>
+                <div class="text-[10px] text-slate-400">Hyundai Creta Owner • Gondia</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-brand-surface border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1 text-brand-gold text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-slate-500 text-xs">Recently</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed italic">
+              "Best workshop in Gondia for general periodic maintenance and brake work. Timely delivery, clean workshop, and genuine synthetic engine oil used."
+            </p>
+            <div class="flex items-center gap-3 pt-2 border-t border-slate-800/80">
+              <div class="w-8 h-8 rounded-full bg-blue-900 text-brand-cyan font-bold text-xs flex items-center justify-center">MP</div>
+              <div>
+                <div class="text-xs font-bold text-white">Mohit Patel</div>
+                <div class="text-[10px] text-slate-400">Tata Nexon Owner • Gondia</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION, MAP & CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-brand-dark relative border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Contact Details Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/80 text-brand-cyan text-xs font-semibold uppercase tracking-wider border border-blue-800/40">
+              Visit Our Workshop
+            </div>
+            <h2 class="font-heading text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              Get In Touch & Visit Us
+            </h2>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              We are conveniently situated in Ganesh Nagar near the Vidhayak Office in Gondia. Drive in or call us in advance for prompt slot allocation.
+            </p>
+
+            <div class="space-y-4 pt-2 text-sm">
+              <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-card/60 border border-slate-800">
+                <div class="w-10 h-10 rounded-lg bg-blue-950 text-brand-electric flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-location-dot text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Workshop Address</h4>
+                  <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                    Ganesh Nagar, Near Vidhayak Office,<br>
+                    Gondia, Maharashtra – 441601
+                  </p>
+                  <a href="https://maps.google.com/?q=Ganesh+Nagar+Near+Vidhayak+Office+Gondia+Maharashtra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-cyan hover:text-white mt-2">
+                    Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-card/60 border border-slate-800">
+                <div class="w-10 h-10 rounded-lg bg-blue-950 text-brand-electric flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-phone text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Direct Phone & WhatsApp</h4>
+                  <p class="text-xs text-slate-400 mt-0.5">Direct contact with Chief Technician Shabbir Sheikh</p>
+                  <div class="mt-2 flex flex-wrap gap-3">
+                    <a href="tel:+919923085169" class="text-sm font-bold text-brand-electric hover:underline">
+                      +91 99230 85169
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-card/60 border border-slate-800">
+                <div class="w-10 h-10 rounded-lg bg-blue-950 text-brand-electric flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-clock text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Working Hours</h4>
+                  <p class="text-xs text-slate-300 mt-0.5">Monday – Sunday: 9:00 AM – 8:30 PM</p>
+                  <p class="text-[11px] text-emerald-400 mt-1">Open 7 Days a week for emergencies & planned maintenance</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <button onclick="openBookingModal()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-sm tracking-wide shadow-lg transition">
+                Book Slot Now
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Interactive Booking Form Column -->
+          <div class="lg:col-span-7">
+            <div class="bg-brand-card/90 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+              <h3 class="font-heading text-2xl font-black text-white uppercase tracking-wide">
+                Quick Service Booking
+              </h3>
+              <p class="text-xs text-slate-400 mt-1 mb-6">
+                Fill this form to instantly schedule your car inspection or get an estimate.
+              </p>
+
+              <form id="heroBookingForm" onsubmit="handleFormSubmit(event, 'heroFormMessage')" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Your Name *</label>
+                    <input type="text" required placeholder="e.g. Ramesh Kumar" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-electric transition">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Phone Number *</label>
+                    <input type="tel" required placeholder="e.g. 98765 43210" pattern="[0-9]{10}" title="Please enter 10 digit number" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-electric transition">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Car Make & Model *</label>
+                    <input type="text" required placeholder="e.g. Maruti Dzire / Hyundai i20" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-electric transition">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Select Service *</label>
+                    <select id="heroServiceSelect" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-electric transition">
+                      <option value="Engine Repair">Engine Repair</option>
+                      <option value="Suspension Work">Suspension Work</option>
+                      <option value="Brake Service">Brake Service</option>
+                      <option value="Battery Service">Battery Service</option>
+                      <option value="Car Diagnostics">Car Diagnostics (OBD Scan)</option>
+                      <option value="General Repair">General Repair</option>
+                      <option value="Oil Change & Maintenance" selected>Oil Change & Periodic Maintenance</option>
+                      <option value="Multi-Brand Car Service">Multi-Brand Car Service</option>
+                      <option value="Complete Checkup">Complete Car Health Checkup</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Preferred Date</label>
+                    <input type="date" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-electric transition">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Fuel Type</label>
+                    <select class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-electric transition">
+                      <option value="Petrol">Petrol</option>
+                      <option value="Diesel">Diesel</option>
+                      <option value="CNG">CNG / Hybrid</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Describe Issue / Specific Request (Optional)</label>
+                  <textarea rows="3" placeholder="Tell us if you hear strange sounds, brake hardness, AC issues, or regular interval servicing..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-brand-electric transition"></textarea>
+                </div>
+
+                <!-- Submission notification message placeholder -->
+                <div id="heroFormMessage" class="hidden p-3 rounded-lg text-xs font-medium"></div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-brand-blue to-cyan-500 hover:opacity-95 text-white font-bold text-sm tracking-wider uppercase transition shadow-lg shadow-blue-700/30">
+                  <i class="fa-solid fa-paper-plane mr-1.5"></i> Submit Appointment Request
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- EMBEDDED GOOGLE MAP CARD -->
+        <div class="mt-16 rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 p-2 shadow-2xl">
+          <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80">
+            <div>
+              <span class="text-xs uppercase font-bold text-brand-electric">Interactive Map</span>
+              <h4 class="text-white font-bold text-base">Visit Shabbir Autocare in Gondia</h4>
+              <p class="text-xs text-slate-400">Ganesh Nagar, Near Vidhayak Office, Gondia, Maharashtra - 441601</p>
+            </div>
+            <a href="https://maps.google.com/?q=Ganesh+Nagar+Near+Vidhayak+Office+Gondia+Maharashtra" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-blue-600/30 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-bold transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-diamond-turn-right"></i> Get Driving Directions
+            </a>
+          </div>
+          <!-- Google Maps Iframe Embed with clean fallbacks -->
+          <div class="w-full h-80 rounded-xl overflow-hidden bg-slate-900 relative">
+            <iframe 
+              src="https://maps.google.com/maps?q=Ganesh+Nagar,+Gondia,+Maharashtra+441601&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              class="w-full h-full border-0 filter grayscale contrast-125 opacity-90 hover:opacity-100 transition"
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Col 1: About -->
+        <div class="space-y-3">
+          <div class="font-heading font-black tracking-wider text-lg text-white uppercase">
+            SHABBIR <span class="text-brand-electric">AUTOCARE</span>
+          </div>
+          <p class="text-xs leading-relaxed text-slate-400">
+            Premium multi-brand garage in Gondia. From regular engine oil servicing to advanced computer diagnostics and mechanical repairs.
+          </p>
+          <p class="text-xs font-semibold text-slate-300">
+            Precision Service. Trusted Performance.
+          </p>
+        </div>
+
+        <!-- Col 2: Services -->
+        <div class="space-y-2">
+          <div class="text-sm font-bold text-white uppercase tracking-wider mb-2">Our Key Services</div>
+          <ul class="space-y-1.5">
+            <li><a href="#services" class="hover:text-brand-electric transition">Engine Repair & Overhaul</a></li>
+            <li><a href="#services" class="hover:text-brand-electric transition">Suspension & Steering Work</a></li>
+            <li><a href="#services" class="hover:text-brand-electric transition">Brake Inspection & Pad Change</a></li>
+            <li><a href="#services" class="hover:text-brand-electric transition">Battery Health & Alternator</a></li>
+            <li><a href="#services" class="hover:text-brand-electric transition">Computer Diagnostics (OBD-II)</a></li>
+            <li><a href="#services" class="hover:text-brand-electric transition">Oil Change & Periodic Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Summary -->
+        <div class="space-y-2">
+          <div class="text-sm font-bold text-white uppercase tracking-wider mb-2">Workshop Contact</div>
+          <p class="text-slate-300 font-semibold"><i class="fa-solid fa-user text-brand-electric mr-1"></i> Shabbir Sheikh (Chief Tech)</p>
+          <p><i class="fa-solid fa-phone text-brand-electric mr-1"></i> <a href="tel:+919923085169" class="hover:text-white">+91 99230 85169</a></p>
+          <p><i class="fa-solid fa-location-dot text-brand-electric mr-1"></i> Ganesh Nagar, Near Vidhayak Office, Gondia – 441601</p>
+          <p><i class="fa-solid fa-clock text-brand-electric mr-1"></i> Mon - Sun: 9:00 AM - 8:30 PM</p>
+        </div>
+
+        <!-- Col 4: Quick Action -->
+        <div class="space-y-3">
+          <div class="text-sm font-bold text-white uppercase tracking-wider mb-2">Instant Booking</div>
+          <p class="text-xs text-slate-400">Prefer direct communication? Call or chat right away.</p>
+          <div class="flex flex-col gap-2">
+            <a href="tel:+919923085169" class="w-full py-2 px-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-phone"></i> Call +91 99230 85169
+            </a>
+            <a href="https://wa.me/919923085169?text=Hello%20Shabbir%20Autocare,%20I%20want%20to%20book%20a%20slot." target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-center transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div>
+          © <span id="currentYear">2026</span> Shabbir Autocare. All rights reserved. Gondia, Maharashtra.
+        </div>
+        <div class="flex gap-4">
+          <span>Expert Care For Every Car</span>
+          <span>•</span>
+          <span>Multi-Brand Auto Repair</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING BOTTOM QUICK ACTION BAR (Mobile & Desktop) -->
+  <div class="fixed bottom-4 right-4 z-50 flex items-center gap-3">
+    <!-- Call Pill -->
+    <a href="tel:+919923085169" title="Call Shabbir Autocare" class="w-13 h-13 p-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/50 flex items-center justify-center transition transform hover:scale-110 active:scale-95">
+      <i class="fa-solid fa-phone text-lg"></i>
+    </a>
+    <!-- WhatsApp Floating Action -->
+    <a href="https://wa.me/919923085169?text=Hello%20Shabbir%20Autocare,%20I%20would%20like%20to%20inquire%20about%20car%20service." target="_blank" rel="noopener noreferrer" title="WhatsApp Us" class="w-14 h-14 p-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-xl shadow-emerald-500/50 flex items-center justify-center transition transform hover:scale-110 active:scale-95">
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-brand-surface border border-slate-700 max-w-lg w-full rounded-2xl p-6 sm:p-8 shadow-2xl relative animate-[fadeIn_0.2s_ease-out]">
+      <!-- Close button -->
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-lg">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="mb-5">
+        <span class="text-xs uppercase font-bold tracking-wider text-brand-electric">Shabbir Autocare</span>
+        <h3 class="font-heading text-xl sm:text-2xl font-black text-white uppercase">Book Your Service</h3>
+        <p class="text-xs text-slate-400 mt-0.5">Prompt confirmation by Chief Technician Shabbir Sheikh.</p>
+      </div>
+
+      <form id="modalBookingForm" onsubmit="handleFormSubmit(event, 'modalFormMessage')" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Name *</label>
+          <input type="text" required placeholder="Full Name" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-electric">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Mobile Number *</label>
+            <input type="tel" required placeholder="10 Digit Number" pattern="[0-9]{10}" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-electric">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Car Model *</label>
+            <input type="text" required placeholder="e.g. Swift / Baleno" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-electric">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Service Needed *</label>
+          <select id="modalServiceSelect" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-electric">
+            <option value="Engine Repair">Engine Repair</option>
+            <option value="Suspension Work">Suspension Work</option>
+            <option value="Brake Service">Brake Service</option>
+            <option value="Battery Service">Battery Service</option>
+            <option value="Car Diagnostics">Car Diagnostics (OBD-II Scan)</option>
+            <option value="General Repair">General Repair</option>
+            <option value="Oil Change & Periodic Maintenance" selected>Oil Change & Periodic Maintenance</option>
+            <option value="Multi-Brand Car Service">Multi-Brand Car Service</option>
+          </select>
+        </div>
+
+        <div id="modalFormMessage" class="hidden p-3 rounded-lg text-xs font-medium"></div>
+
+        <div class="flex gap-3 pt-2">
+          <button type="button" onclick="closeBookingModal()" class="w-1/3 py-2.5 rounded-xl border border-slate-700 text-slate-300 text-xs font-bold hover:bg-slate-800 transition">
+            Cancel
+          </button>
+          <button type="submit" class="w-2/3 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-bold uppercase tracking-wider hover:opacity-95 transition shadow-lg">
+            Confirm Booking
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Set current year dynamically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    function toggleMobileMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      }
+    }
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Close mobile menu on click of nav links
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+          toggleMobileMenu();
+        }
+      });
+    });
+
+    // Booking Modal handlers
+    const bookingModal = document.getElementById('bookingModal');
+    const modalServiceSelect = document.getElementById('modalServiceSelect');
+    const heroServiceSelect = document.getElementById('heroServiceSelect');
+
+    function openBookingModal(preselectedService = null) {
+      if (preselectedService && modalServiceSelect) {
+        modalServiceSelect.value = preselectedService;
+      }
+      bookingModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+      bookingModal.classList.add('hidden');
+      document.body.style.overflow = '';
+      const msgBox = document.getElementById('modalFormMessage');
+      if (msgBox) {
+        msgBox.classList.add('hidden');
+      }
+    }
+
+    // Trigger service selection from cards
+    function bookSpecificService(serviceName) {
+      if (heroServiceSelect) {
+        heroServiceSelect.value = serviceName;
+      }
+      openBookingModal(serviceName);
+    }
+
+    // Form submission handler with friendly status box (no alerts)
+    function handleFormSubmit(event, messageBoxId) {
+      event.preventDefault();
+      const msgBox = document.getElementById(messageBoxId);
+      
+      if (msgBox) {
+        msgBox.className = "p-3 rounded-xl text-xs font-semibold bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 block";
+        msgBox.innerHTML = "<i class='fa-solid fa-circle-check mr-1.5'></i> Thank you! Your booking request has been sent to Shabbir Autocare. We will call you shortly to confirm your slot.";
+        
+        event.target.reset();
+
+        if (messageBoxId === 'modalFormMessage') {
+          setTimeout(() => {
+            closeBookingModal();
+          }, 3500);
+        }
+      }
+    }
+
+    // Close modal on escape key or clicking backdrop
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !bookingModal.classList.contains('hidden')) {
+        closeBookingModal();
+      }
+    });
+
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) {
+        closeBookingModal();
+      }
+    });
+  </script>
+</body>
+</html>
